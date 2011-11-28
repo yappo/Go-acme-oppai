@@ -1,0 +1,10 @@
+Go-acme-oppai
+=============
+
+おっぱいおっぱい
+
+install
+-------
+
+    goinstall github.com/yappo/Go-acme-oppai
+
