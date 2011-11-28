@@ -1,6 +1,6 @@
-include $(GOROOT)/src/Make.$(GOARCH)
+include $(GOROOT)/src/Make.inc
 
-TARG=acme/oppai
+TARG=github.com/yappo/Go-acme-oppai
 GOFILES=\
 	oppai.go\
 
