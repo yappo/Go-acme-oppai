@@ -35,7 +35,7 @@ func (self *Oppai) Done() (buf string) {
 		}
 	}
 
-	self.cmd = make([]map[string]string, 0)
+	self.cmd = []map[string]string{}
 	return buf
 }
 
