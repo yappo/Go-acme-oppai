@@ -1,28 +1,26 @@
 package oppai
 
-import "container/vector"
-
 type Oppai struct {
 	count int;
-	cmd vector.Vector;
+	cmd []map[string]string
 }
 
 func (self *Oppai) Massage() *Oppai {
-	self.cmd.Push(map[string] string { "name": "Massage", "message": "" } );
+	self.cmd = append(self.cmd, map[string] string { "name": "Massage", "message": "" });
 	return self;
 }
 
 func (self *Oppai) Oppai(msg string) *Oppai {
-	self.cmd.Push(map[string] string { "name": "Oppai", "message": msg } );
+	self.cmd = append(self.cmd, map[string] string { "name": "Oppai", "message": msg } );
 	return self;
 }
 
 func (self *Oppai) Done() (buf string) {
 	var c int = 0;
 
-	for i := 0; i < self.cmd.Len(); i++ {
-		var cmd string = self.cmd.At(i).(map[string] string)["name"];
-		var msg string = self.cmd.At(i).(map[string] string)["message"];
+	for i := 0; i < len(self.cmd); i++ {
+		var cmd string = self.cmd[i]["name"];
+		var msg string = self.cmd[i]["message"];
 
 		if cmd == "Massage" {
 			buf += doneMassage();
@@ -37,7 +35,7 @@ func (self *Oppai) Done() (buf string) {
 		}
 	}
 
-	self.cmd.Init(0);
+	self.cmd = make([]map[string]string, 0)
 	return buf;
 }
 
