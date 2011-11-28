@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "acme/oppai"
+import "github.com/yappo/Go-acme-oppai"
 
 func main() {
      var o oppai.Oppai;
@@ -13,6 +13,5 @@ func main() {
 			 Oppai("").
 			 Oppai("").
 			 Massage().
-			 Done()
-	 );
+			 Done());
 }
